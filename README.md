@@ -34,27 +34,46 @@ import torch
 from bigru import BiConvGRU
 
 model = BiConvGRU(
+    
     input_size=(64, 64),    # Input spatial dimensions (H, W)
+    
     input_dim=3,            # Input channels (e.g., RGB)
+    
     hidden_dim=[32, 64],    # Hidden channels per layer
+    
     kernel_size=[3, 5],     # Convolutional kernel sizes per layer
+    
     num_layers=2,           # Number of BiConvGRU layers
+    
     bidirectional=True,     # Enable bidirectional processing
+    
     dropout=0.2,            # Inter-layer dropout
+    
     output_size=(32, 32)    # Downsampled output dimensions
+    
 ).to("cuda")
 
-Parameters
-BiConvGRU Arguments
-Parameter	Type	Description
-input_size	Tuple[int, int]	Spatial dimensions of input (H, W)
-input_dim	int	Number of input channels
-hidden_dim	Union[int, List[int]]	Hidden channels per layer (int or list)
-kernel_size	Union[int, Tuple, List]	Convolutional kernel size (int/tuple/list)
-num_layers	int	Number of stacked BiConvGRU layers
-bidirectional	bool	Enable bidirectional processing
-batch_first	bool	If True, input shape is (batch, seq, *)
-dropout	float	Dropout probability between layers
-output_size	Tuple[int, int]	Downsampled output dimensions (optional)
+Key Components
+ConvGRUCell
+Single-layer ConvGRU with gated convolutions and state updates.
+
+ConvGRU
+Multi-layer unidirectional ConvGRU with adaptive downsampling.
+
+BiConvGRU
+Bidirectional wrapper with forward/backward processing.
+
+
+Citation
+If this work aids your research, please cite:
+
+@software{BiConvGRU,
+  author = {Dianyou Yu},
+  title = {BiConvGRU: Bidirectional Convolutional GRU for Spatiotemporal Modeling},
+  year = {2025},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{BiConvGRU](https://github.com/TopDianyou/BiConvGRU)}}
+}
 
 
