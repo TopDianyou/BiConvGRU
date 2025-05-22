@@ -68,12 +68,19 @@ Citation
 If this work aids your research, please cite:
 
 @software{BiConvGRU,
+
   author = {Dianyou Yu},
+  
   title = {BiConvGRU: Bidirectional Convolutional GRU for Spatiotemporal Modeling},
+  
   year = {2025},
+  
   publisher = {GitHub},
+  
   journal = {GitHub repository},
+  
   howpublished = {\url{BiConvGRU](https://github.com/TopDianyou/BiConvGRU)}}
+  
 }
 
 
